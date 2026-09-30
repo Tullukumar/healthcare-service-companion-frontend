@@ -104,7 +104,7 @@ function Register() {
       setLoading(true);
 
       const response = await fetch(
- "http://localhost:5000/api/auth/otp/send",
+`${import.meta.env.VITE_API_URL}/api/auth/otp/send`,
 {
     method: "POST",
 
@@ -172,7 +172,7 @@ function Register() {
     try {
       setLoading(true);
 const response = await fetch(
-"http://localhost:5000/api/auth/otp/verify",
+`${import.meta.env.VITE_API_URL}/api/auth/otp/verify`,
 {
     method: "POST",
 
@@ -260,7 +260,7 @@ const response = await fetch(
     try {
       setLoading(true);
       const response = await fetch(
-  "http://localhost:5000/api/auth/register-verified",
+ `${import.meta.env.VITE_API_URL}/api/auth/register-verified`,
 {
     method: "POST",
 

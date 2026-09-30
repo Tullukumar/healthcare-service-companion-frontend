@@ -28,7 +28,7 @@ function DoctorProfile() {
         setLoading(true);
         setError("");
         const response = await fetch(
-  `http://localhost:5000/api/doctors/${id}`
+  `${import.meta.env.VITE_API_URL}/api/doctors/${id}`
 );
 
 
@@ -81,7 +81,7 @@ function DoctorProfile() {
     try {
       setBooking(true);
 const response = await fetch(
-  "http://localhost:5000/api/appointments",
+ `${import.meta.env.VITE_API_URL}/api/appointments`,
   {      method: "POST",
           headers: {
             Authorization: `Bearer ${token}`,

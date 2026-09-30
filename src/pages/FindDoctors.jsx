@@ -21,7 +21,7 @@ function FindDoctors() {
         setLoading(true);
         setError("");
         const response = await fetch(
-  "http://localhost:5000/api/doctors"
+ `${import.meta.env.VITE_API_URL}/api/doctors`
 );
 
 

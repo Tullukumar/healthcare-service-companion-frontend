@@ -19,7 +19,7 @@ function MedicalRecords() {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/medical-records/my",
+       `${import.meta.env.VITE_API_URL}/api/medical-records/my`,
         {
           method: "GET",
           headers: {

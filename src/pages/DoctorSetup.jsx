@@ -49,7 +49,7 @@ function DoctorSetup() {
         setHospitalsLoading(true);
 
        const hospitalsResponse = await fetch(
-  "http://localhost:5000/api/hospitals"
+  `${import.meta.env.VITE_API_URL}/api/hospitals`
 );
 
         const hospitalsData =
@@ -76,7 +76,7 @@ function DoctorSetup() {
 
         setProfileLoading(true);
 const profileResponse = await fetch(
-  "http://localhost:5000/api/doctors/profile/me",
+  `${import.meta.env.VITE_API_URL}/api/doctors/profile/me`,
   {
             method: "GET",
             headers: {
@@ -268,7 +268,7 @@ const profileResponse = await fetch(
         ? "PUT"
         : "POST";
        const response = await fetch(
-  "http://localhost:5000/api/doctors/profile",
+ `${import.meta.env.VITE_API_URL}/api/doctors/profile`,
   {
           method,
           headers: {

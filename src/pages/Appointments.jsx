@@ -20,7 +20,7 @@ function Appointments() {
           return;
         }
 const response = await fetch(
-  "http://localhost:5000/api/appointments/my",
+`${import.meta.env.VITE_API_URL}/api/appointments/my`,
   {
             method: "GET",
             headers: {

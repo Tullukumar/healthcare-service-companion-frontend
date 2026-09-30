@@ -67,7 +67,7 @@ const handleCreateMedicalRecord = async (e) => {
     }
 
     const response = await fetch(
-      "http://localhost:5000/api/medical-records",
+      `${import.meta.env.VITE_API_URL}/api/medical-records`,
       {
         method: "POST",
         headers: {
@@ -174,7 +174,7 @@ const handleViewPatientRecords = async (appointment) => {
     }
 
     const response = await fetch(
-      `http://localhost:5000/api/medical-records/patient/${patientId}`,
+     `${import.meta.env.VITE_API_URL}/api/medical-records/patient/${patientId}`,
       {
         method: "GET",
         headers: {
@@ -226,7 +226,7 @@ const handleViewPatientRecords = async (appointment) => {
         }
 
         const response = await fetch(
-        "http://localhost:5000/api/appointments/doctor",
+      `${import.meta.env.VITE_API_URL}/api/appointments/doctor`,
   {
 
             method: "GET",
@@ -274,7 +274,7 @@ const handleViewPatientRecords = async (appointment) => {
 
 
     const response = await fetch(
-  `http://localhost:5000/api/appointments/${appointmentId}/${action}`,
+ `${import.meta.env.VITE_API_URL}/api/appointments/${appointmentId}/${action}`,
   {
           method: "PATCH",
           headers: {

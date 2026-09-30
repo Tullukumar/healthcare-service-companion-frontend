@@ -116,7 +116,7 @@ function DoctorDashboard() {
         );
       }
 const response = await fetch(
-  "http://localhost:5000/api/doctors/schedule",
+ `${import.meta.env.VITE_API_URL}/api/doctors/schedule`,
   {
           method: "GET",
           headers: {
@@ -407,7 +407,7 @@ useEffect(() => {
       // SAVE TO BACKEND
       // ----------------------------------------
 const response = await fetch(
-  "http://localhost:5000/api/doctors/schedule",
+ `${import.meta.env.VITE_API_URL}/api/doctors/schedule`,
   {
           method: "PUT",
 

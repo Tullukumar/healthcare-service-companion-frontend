@@ -51,7 +51,7 @@ function AmbulanceDashboard() {
       setError("");
 
     const response = await fetch(
-  "http://localhost:5000/api/ambulance-requests/pending",
+ `${import.meta.env.VITE_API_URL}/api/ambulance-requests/pending`,
   {
           method: "GET",
           headers: {
@@ -103,7 +103,7 @@ function AmbulanceDashboard() {
 
     try {
   const response = await fetch(
-    "http://localhost:5000/api/ambulance-requests/active",
+    `${import.meta.env.VITE_API_URL}/api/ambulance-requests/active`,
     {
           method: "GET",
           headers: {
@@ -176,7 +176,7 @@ function AmbulanceDashboard() {
       setError("");
       setMessage("");
 const response = await fetch(
-  "http://localhost:5000/api/ambulances/driver/online-status",
+  `${import.meta.env.VITE_API_URL}/api/ambulances/driver/online-status`,
   {
           method: "PATCH",
           headers: {
@@ -287,7 +287,7 @@ const response = await fetch(
       }
 try {
   const response = await fetch(
-    "http://localhost:5000/api/ambulances/driver/status",
+   `${import.meta.env.VITE_API_URL}/api/ambulances/driver/status`,
     {
             method: "GET",
             headers: {
@@ -404,7 +404,7 @@ try {
       return;
     }
 const socket = io(
-  "http://localhost:5000",
+import.meta.env.VITE_API_URL,
   {
         auth: {
           token,
@@ -658,7 +658,7 @@ socket.emit(
       setError("");
       setMessage("");
 const response = await fetch(
-  `http://localhost:5000/api/ambulance-requests/${requestId}/accept`,
+`${import.meta.env.VITE_API_URL}/api/ambulance-requests/${requestId}/accept`,
   {
           method: "PATCH",
           headers: {
@@ -765,7 +765,7 @@ const response = await fetch(
       setError("");
       setMessage("");
 const response = await fetch(
-  `http://localhost:5000/api/ambulance-requests/${requestId}/status`,
+ `${import.meta.env.VITE_API_URL}/api/ambulance-requests/${requestId}/status`,
   {
           method: "PATCH",
           headers: {

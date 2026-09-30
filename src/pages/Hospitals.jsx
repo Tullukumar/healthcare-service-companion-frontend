@@ -91,7 +91,7 @@ function Hospitals() {
         setLoading(true);
         setError("");
 const response = await fetch(
-  "http://localhost:5000/api/hospitals"
+ `${import.meta.env.VITE_API_URL}/api/hospitals`
 );
 
 

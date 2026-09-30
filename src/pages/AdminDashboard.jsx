@@ -94,7 +94,7 @@ function Icon({ name, size = 20 }) {
 
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+  import.meta.env.VITE_API_URL || "https://healthcare-service-companion-backend.onrender.com/api";
 
 // Change this if your backend route for admin appointments is different
 const ADMIN_APPOINTMENTS_PATH = "/appointments/admin";
@@ -194,9 +194,9 @@ function AdminDashboard() {
         };
 
         const [dashboardResponse, doctorsResponse, pendingResponse] = await Promise.all([
-          fetch("http://localhost:5000/api/admin/dashboard", { headers }),
-          fetch("http://localhost:5000/api/admin/doctors", { headers }),
-          fetch("http://localhost:5000/api/admin/doctors/pending", { headers }),
+         fetch(`${import.meta.env.VITE_API_URL}/api/admin/dashboard`, { headers }),
+fetch(`${import.meta.env.VITE_API_URL}/api/admin/doctors`, { headers }),
+fetch(`${import.meta.env.VITE_API_URL}/api/admin/doctors/pending`, { headers }),
         ]);
 
         const dashboardData = await dashboardResponse.json();
@@ -206,7 +206,7 @@ function AdminDashboard() {
         let initialSevaRequests = [];
 
         try {
-          const sevaResponse = await fetch("http://localhost:5000/api/admin/seva/requests", { headers });
+         const sevaResponse = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/seva/requests`, { headers });
           const sevaData = await sevaResponse.json();
 
           if (sevaResponse.ok) {
@@ -280,15 +280,15 @@ function AdminDashboard() {
         pendingResponse,
       ] = await Promise.all([
     fetch(
-  "http://localhost:5000/api/admin/dashboard",
+ `${import.meta.env.VITE_API_URL}/api/admin/dashboard`,
   { headers }
 ),
 fetch(
-  "http://localhost:5000/api/admin/doctors",
+  `${import.meta.env.VITE_API_URL}/api/admin/doctors`,
   { headers }
 ),
 fetch(
-  "http://localhost:5000/api/admin/doctors/pending",
+  `${import.meta.env.VITE_API_URL}/api/admin/doctors/pending`,
   { headers }
 ),
       ]);
@@ -305,7 +305,7 @@ fetch(
       let refreshedSevaRequests = [];
 try {
  const sevaResponse = await fetch(
-  "http://localhost:5000/api/admin/seva/requests",
+  `${import.meta.env.VITE_API_URL}/api/admin/seva/requests`,
   { headers }
 );
 
@@ -391,7 +391,7 @@ try {
         );
       }
 const response = await fetch(
-  `http://localhost:5000/api/admin/doctors/${doctorId}/verify`,
+  `${import.meta.env.VITE_API_URL}/api/admin/doctors/${doctorId}/verify`,
   {
           method: "PATCH",
           headers: {
@@ -471,7 +471,7 @@ const response = await fetch(
         );
       }
 const response = await fetch(
-  `http://localhost:5000/api/admin/doctors/${rejectingDoctor._id}/reject`,
+  `${import.meta.env.VITE_API_URL}/api/admin/doctors/${rejectingDoctor._id}/reject`,
   {
           method: "PATCH",
           headers: {
@@ -556,7 +556,7 @@ const response = await fetch(
       const query = params.toString();
 
      const response = await fetch(
-  `http://localhost:5000/api/admin/seva/requests${
+  `${import.meta.env.VITE_API_URL}/api/admin/seva/requests${ 
     query ? `?${query}` : ""
   }`,
   {
@@ -600,7 +600,7 @@ const response = await fetch(
       }
 
       const response = await fetch(
-  `http://localhost:5000/api/admin/seva/requests/${requestId}/status`,
+  `${import.meta.env.VITE_API_URL}/api/admin/seva/requests/${requestId}/status`,
   {
           method: "PUT",
           headers: {
@@ -656,7 +656,7 @@ const response = await fetch(
       }
 
      const response = await fetch(
-  `http://localhost:5000/api/admin/seva/requests/${requestId}/donation`,
+`${import.meta.env.VITE_API_URL}/api/admin/seva/requests/${requestId}/donation`,
   {
           method: "PUT",
           headers: {

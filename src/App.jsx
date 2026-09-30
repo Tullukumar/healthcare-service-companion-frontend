@@ -90,7 +90,7 @@ function App() {
     const checkServer = async () => {
     try {
  const response = await fetch(
-  "http://localhost:5000/api/health"
+  `${import.meta.env.VITE_API_URL}/api/health`
 );
 
         if (response.ok) {
