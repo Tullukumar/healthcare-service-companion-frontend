@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000";
+const API_URL = "https://healthcare-service-companion-backend.onrender.com";
 export async function checkServer() {
   const response = await fetch(`${API_URL}/`);
 
